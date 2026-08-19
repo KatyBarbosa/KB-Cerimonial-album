@@ -313,7 +313,29 @@ input[type="file"]{
     }
 
 }
+.event-symbols{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:15px;
+    margin-bottom:10px;
+}
 
+.symbol{
+    width:65px;
+    height:65px;
+    object-fit:contain;
+}
+
+.capelo{
+    width:58px;
+    height:58px;
+}
+
+.emblema{
+    width:68px;
+    height:68px;
+}
 </style>
 
 </head>
@@ -330,11 +352,21 @@ input[type="file"]{
 
 <div class="header-container">
 
-<img
-    src="monograma.png"
-    class="logo"
-    alt="KB Cerimonial"
->
+<div class="event-symbols">
+
+    <img
+        src="capelo.png"
+        class="symbol capelo"
+        alt="Capelo"
+    >
+
+    <img
+        src="emblema-curso.png"
+        class="symbol emblema"
+        alt="Emblema do curso"
+    >
+
+</div>
 
 <p class="brand">
    Tecnologia em Alimento
