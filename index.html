@@ -14,328 +14,1013 @@
       type="image/png"
       href="favicon.png">
 
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans:wght@400;600;700&display=swap"
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap"
       rel="stylesheet">
 
 <style>
+
+/* =====================================================
+   RESET
+===================================================== */
 
 *{
     box-sizing:border-box;
 }
 
+html{
+    scroll-behavior:smooth;
+}
+
 body{
     margin:0;
+    background:#f7f7f7;
+    color:#24324a;
     font-family:'Open Sans',Arial,sans-serif;
-    background:#f4f7ff;
-    color:#333;
 }
 
-/* =========================
-   HEADER
-========================= */
 
-.header{
-    background:#fff;
-    padding:25px 20px;
-    box-shadow:0 2px 10px rgba(0,0,0,.08);
+/* =====================================================
+   PALETA
+===================================================== */
+
+:root{
+
+    --azul:#123b82;
+    --azul-escuro:#09285d;
+
+    --dourado:#c9a227;
+    --dourado-claro:#e5c96d;
+
+    --branco:#ffffff;
+    --cinza:#6d7280;
+
 }
 
-.header-container{
-    max-width:700px;
+
+/* =====================================================
+   ÁREA PRINCIPAL
+===================================================== */
+
+.page{
+    width:100%;
+    max-width:620px;
+    min-height:100vh;
     margin:auto;
-    text-align:center;
+    background:#fff;
+    box-shadow:0 0 30px rgba(0,0,0,.08);
+    overflow:hidden;
 }
 
-.logo{
-    width:85px;
-    height:85px;
-    object-fit:cover;
-    border-radius:50%;
-    margin-bottom:8px;
+
+/* =====================================================
+   TOPO AZUL
+===================================================== */
+
+.top-decoration{
+
+    position:relative;
+
+    height:125px;
+
+    background:
+
+        radial-gradient(
+            circle at 15% 75%,
+            rgba(255,255,255,.75) 0 1px,
+            transparent 2px
+        ),
+
+        radial-gradient(
+            circle at 30% 55%,
+            rgba(229,201,109,.8) 0 1px,
+            transparent 2px
+        ),
+
+        radial-gradient(
+            circle at 50% 70%,
+            rgba(255,255,255,.8) 0 1px,
+            transparent 2px
+        ),
+
+        radial-gradient(
+            circle at 70% 45%,
+            rgba(229,201,109,.8) 0 1px,
+            transparent 2px
+        ),
+
+        radial-gradient(
+            circle at 85% 65%,
+            rgba(255,255,255,.7) 0 1px,
+            transparent 2px
+        ),
+
+        linear-gradient(
+            180deg,
+            #123b82 0%,
+            #09285d 100%
+        );
+
+    background-size:
+        70px 70px,
+        55px 55px,
+        90px 90px,
+        65px 65px,
+        80px 80px,
+        auto;
+
 }
+
+
+/* =====================================================
+   PARTÍCULAS DOURADAS
+===================================================== */
+
+.top-decoration::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    right:0;
+    bottom:-5px;
+
+    height:75px;
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(201,162,39,.85) 0 1px,
+            transparent 2px
+        ),
+
+        radial-gradient(
+            circle,
+            rgba(229,201,109,.7) 0 1.5px,
+            transparent 2.5px
+        ),
+
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.7) 0 1px,
+            transparent 2px
+        );
+
+    background-size:
+        23px 19px,
+        37px 29px,
+        31px 25px;
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            transparent,
+            black 20%,
+            black 75%,
+            transparent
+        );
+
+    opacity:.9;
+
+}
+
+
+/* =====================================================
+   CONTEÚDO DO CABEÇALHO
+===================================================== */
+
+.header-content{
+
+    position:relative;
+
+    margin-top:-25px;
+
+    padding:
+        0
+        25px
+        25px;
+
+    text-align:center;
+
+    z-index:2;
+
+}
+
+
+/* =====================================================
+   CAPELO ESTILIZADO
+===================================================== */
+
+.capelo{
+
+    position:relative;
+
+    width:88px;
+    height:72px;
+
+    margin:0 auto 10px;
+
+}
+
+
+/* topo do capelo */
+
+.capelo-top{
+
+    position:absolute;
+
+    top:8px;
+    left:10px;
+
+    width:68px;
+    height:34px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f2d878,
+            #c99e20
+        );
+
+    clip-path:
+        polygon(
+            50% 0,
+            100% 50%,
+            50% 100%,
+            0 50%
+        );
+
+}
+
+
+/* parte inferior */
+
+.capelo-base{
+
+    position:absolute;
+
+    left:29px;
+    top:35px;
+
+    width:30px;
+    height:20px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #c49a22,
+            #e6ca69,
+            #b88d16
+        );
+
+    border-radius:
+        0 0 8px 8px;
+
+}
+
+
+/* tassel */
+
+.capelo-tassel{
+
+    position:absolute;
+
+    right:2px;
+    top:28px;
+
+    width:3px;
+    height:38px;
+
+    background:#c9a227;
+
+}
+
+
+.capelo-tassel::after{
+
+    content:"";
+
+    position:absolute;
+
+    bottom:0;
+    left:-4px;
+
+    width:11px;
+    height:8px;
+
+    background:#c9a227;
+
+    border-radius:50%;
+
+}
+
+
+/* =====================================================
+   MARCA
+===================================================== */
 
 .brand{
+
     margin:0;
-    font-size:.85rem;
-    color:#555;
+
+    font-size:.75rem;
+
     font-weight:700;
-    letter-spacing:1.5px;
-}
 
-.event-name{
-    margin:5px 0;
-    font-family:'Great Vibes',cursive;
-    font-size:2.8rem;
-    color:#4169E1;
-}
+    letter-spacing:3px;
 
-.event-info{
-    margin:5px 0 0;
-    font-size:.9rem;
-    color:#666;
+    color:#555;
+
 }
 
 
-/* =========================
-   CONTAINER
-========================= */
+/* =====================================================
+   NOME
+===================================================== */
 
-.container{
-    max-width:600px;
-    margin:30px auto;
-    padding:0 20px;
+.student-name{
+
+    margin:
+        5px
+        0
+        0;
+
+    font-family:
+        'Great Vibes',
+        cursive;
+
+    font-size:3rem;
+
+    font-weight:400;
+
+    color:var(--dourado);
+
+    line-height:1.1;
+
 }
 
 
-/* =========================
-   CARD
-========================= */
+/* =====================================================
+   FORMATURA
+===================================================== */
 
-.card{
+.event-title{
+
+    margin:
+        5px
+        0
+        0;
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    font-size:1.05rem;
+
+    letter-spacing:4px;
+
+    color:var(--azul);
+
+    text-transform:uppercase;
+
+}
+
+
+/* =====================================================
+   LINHA DOURADA
+===================================================== */
+
+.gold-line{
+
+    width:75%;
+
+    height:1px;
+
+    margin:
+        22px
+        auto;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--dourado),
+            transparent
+        );
+
+    position:relative;
+
+}
+
+
+.gold-line::after{
+
+    content:"✦";
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    transform:
+        translate(-50%,-50%);
+
+    padding:0 8px;
+
     background:#fff;
-    border-radius:20px;
-    padding:28px 22px;
-    box-shadow:0 5px 20px rgba(0,0,0,.08);
+
+    color:var(--dourado);
+
+    font-size:.75rem;
+
 }
 
 
-/* =========================
-   INTRO
-========================= */
+/* =====================================================
+   CONVITE
+===================================================== */
 
-.intro{
+.invitation{
+
+    padding:
+        0
+        25px;
+
     text-align:center;
+
 }
 
-.camera{
-    font-size:55px;
-    margin-bottom:5px;
+
+.invitation h2{
+
+    margin:
+        0
+        0
+        12px;
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    font-size:1.35rem;
+
+    font-weight:600;
+
+    color:var(--azul);
+
 }
 
-.intro h2{
-    margin:5px 0 10px;
-    font-size:1.4rem;
-    color:#4169E1;
-}
 
-.intro p{
+.invitation p{
+
+    margin:
+        0
+        auto;
+
+    max-width:490px;
+
+    font-size:.92rem;
+
+    line-height:1.8;
+
     color:#666;
-    line-height:1.6;
-    font-size:.95rem;
+
 }
 
 
-/* =========================
-   FORMULÁRIO
-========================= */
+/* =====================================================
+   CARD DO ÁLBUM
+===================================================== */
+
+.album-card{
+
+    margin:
+        25px
+        20px
+        30px;
+
+    padding:
+        30px
+        22px;
+
+    background:#fff;
+
+    border:
+        1px solid
+        rgba(201,162,39,.35);
+
+    border-radius:18px;
+
+    box-shadow:
+        0 8px 25px
+        rgba(9,40,93,.08);
+
+    text-align:left;
+
+}
+
+
+/* =====================================================
+   TÍTULO DO ÁLBUM
+===================================================== */
+
+.album-heading{
+
+    text-align:center;
+
+}
+
+
+.album-heading .icon{
+
+    font-size:38px;
+
+    margin-bottom:4px;
+
+}
+
+
+.album-heading h3{
+
+    margin:0;
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    font-size:1.3rem;
+
+    color:var(--azul);
+
+}
+
+
+.album-heading p{
+
+    margin:
+        7px
+        0
+        20px;
+
+    font-size:.86rem;
+
+    color:#777;
+
+}
+
+
+/* =====================================================
+   LABEL
+===================================================== */
 
 label{
+
     display:block;
-    margin-top:20px;
-    margin-bottom:7px;
-    font-weight:bold;
-    color:#444;
+
+    margin:
+        18px
+        0
+        7px;
+
+    font-size:.9rem;
+
+    font-weight:700;
+
+    color:var(--azul);
+
 }
+
+
+/* =====================================================
+   INPUT
+===================================================== */
 
 input[type="text"]{
+
     width:100%;
-    padding:14px;
-    border:2px solid #ddd;
+
+    padding:14px 15px;
+
+    border:
+        1px solid
+        #d8dce5;
+
     border-radius:10px;
+
     font-size:16px;
+
+    font-family:
+        'Open Sans',
+        sans-serif;
+
     outline:none;
+
+    transition:.2s;
+
 }
+
 
 input[type="text"]:focus{
-    border-color:#4169E1;
+
+    border-color:
+        var(--dourado);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(201,162,39,.10);
+
 }
 
 
-/* =========================
-   ÁREA DE FOTO
-========================= */
+/* =====================================================
+   ÁREA DE SELEÇÃO
+===================================================== */
 
 .file-area{
-    border:2px dashed #4169E1;
-    border-radius:14px;
-    padding:25px 15px;
+
+    display:block;
+
+    padding:
+        24px
+        15px;
+
+    border:
+        1.5px dashed
+        var(--dourado);
+
+    border-radius:13px;
+
     text-align:center;
-    margin-top:8px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #fff,
+            #fffdf7
+        );
+
     cursor:pointer;
-    background:#f7f9ff;
+
     transition:.2s;
+
 }
+
 
 .file-area:hover{
-    background:#eef2ff;
+
+    background:#fffaf0;
+
 }
+
 
 .file-area strong{
+
     display:block;
-    margin-bottom:5px;
-    color:#4169E1;
+
+    color:var(--azul);
+
+    font-size:.95rem;
+
+    margin-bottom:6px;
+
 }
+
 
 .file-area span{
-    font-size:.85rem;
-    color:#777;
+
+    font-size:.78rem;
+
+    color:#888;
+
 }
+
 
 input[type="file"]{
+
     display:none;
+
 }
 
 
-/* =========================
+/* =====================================================
    PREVIEW
-========================= */
+===================================================== */
 
 .preview{
+
     display:grid;
-    grid-template-columns:repeat(3,1fr);
+
+    grid-template-columns:
+        repeat(3,1fr);
+
     gap:8px;
+
     margin-top:15px;
+
 }
+
 
 .preview img{
+
     width:100%;
+
     aspect-ratio:1;
+
     object-fit:cover;
-    border-radius:8px;
+
+    border-radius:9px;
+
+    border:
+        1px solid
+        #eee;
+
 }
+
 
 .count{
+
     text-align:center;
-    margin-top:10px;
-    font-size:.85rem;
-    color:#666;
+
+    margin-top:9px;
+
+    font-size:.78rem;
+
+    color:#777;
+
 }
 
 
-/* =========================
+/* =====================================================
    BOTÃO
-========================= */
+===================================================== */
 
 .btn{
+
     width:100%;
+
     border:none;
-    border-radius:12px;
+
+    border-radius:10px;
+
     padding:15px;
+
     margin-top:20px;
-    font-size:16px;
-    font-weight:bold;
+
+    font-family:
+        'Open Sans',
+        sans-serif;
+
+    font-size:15px;
+
+    font-weight:700;
+
+    letter-spacing:.3px;
+
     cursor:pointer;
+
+    transition:.2s;
+
 }
 
-.btn-blue{
-    background:#4169E1;
+
+.btn-gold{
+
+    background:
+        linear-gradient(
+            135deg,
+            #d9b846,
+            #b88d16
+        );
+
     color:#fff;
-    box-shadow:0 4px 10px rgba(65,105,225,.25);
+
+    box-shadow:
+        0 5px 12px
+        rgba(184,141,22,.20);
+
 }
 
-.btn-blue:hover{
-    background:#3157c7;
+
+.btn-gold:hover{
+
+    transform:
+        translateY(-1px);
+
 }
 
-.btn-blue:disabled{
+
+.btn-gold:disabled{
+
     background:#aaa;
+
     cursor:not-allowed;
+
+    transform:none;
+
 }
 
 
-/* =========================
+/* =====================================================
    STATUS
-========================= */
+===================================================== */
 
 .status{
+
     text-align:center;
-    margin-top:15px;
+
+    margin-top:14px;
+
+    font-size:.85rem;
+
     font-weight:600;
+
     line-height:1.5;
+
 }
 
 
-/* =========================
+/* =====================================================
    SUCESSO
-========================= */
+===================================================== */
 
 .success{
+
     display:none;
+
     text-align:center;
+
 }
 
-.success-icon{
-    font-size:65px;
+
+.success-symbol{
+
+    width:70px;
+    height:70px;
+
+    margin:
+        0 auto
+        15px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #123b82,
+            #09285d
+        );
+
+    color:#e5c96d;
+
+    font-size:32px;
+
 }
+
 
 .success h2{
-    color:#4169E1;
+
+    margin:0;
+
+    font-family:
+        'Playfair Display',
+        serif;
+
+    color:var(--azul);
+
 }
+
 
 .success p{
-    color:#666;
-    line-height:1.6;
+
+    color:#777;
+
+    line-height:1.7;
+
+    font-size:.9rem;
+
 }
 
 
-/* =========================
-   FOOTER
-========================= */
+/* =====================================================
+   RODAPÉ
+===================================================== */
 
 .footer{
+
+    padding:
+        20px;
+
     text-align:center;
-    padding:25px 20px;
-    font-size:.8rem;
-    color:#777;
+
+    border-top:
+        1px solid
+        rgba(201,162,39,.25);
+
+    font-size:.75rem;
+
+    color:#888;
+
 }
+
 
 .footer strong{
-    color:#4169E1;
+
+    color:var(--azul);
+
 }
 
 
-/* =========================
+/* =====================================================
    MOBILE
-========================= */
+===================================================== */
 
 @media(max-width:600px){
 
-    .event-name{
-        font-size:2.3rem;
+    .top-decoration{
+
+        height:115px;
+
     }
 
-    .card{
-        padding:25px 18px;
+
+    .header-content{
+
+        padding-left:20px;
+        padding-right:20px;
+
     }
 
-    .preview{
-        grid-template-columns:repeat(3,1fr);
+
+    .student-name{
+
+        font-size:2.7rem;
+
+    }
+
+
+    .event-title{
+
+        font-size:.9rem;
+
+        letter-spacing:3px;
+
+    }
+
+
+    .invitation{
+
+        padding:
+            0
+            20px;
+
+    }
+
+
+    .album-card{
+
+        margin:
+            25px
+            14px
+            25px;
+
+        padding:
+            26px
+            17px;
+
     }
 
 }
-.event-symbols{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:15px;
-    margin-bottom:10px;
+
+
+/* =====================================================
+   TELAS MUITO PEQUENAS
+===================================================== */
+
+@media(max-width:360px){
+
+    .student-name{
+
+        font-size:2.4rem;
+
+    }
+
+
+    .album-card{
+
+        padding:
+            22px
+            14px;
+
+    }
+
 }
 
-.symbol{
-    width:65px;
-    height:65px;
-    object-fit:contain;
-}
-
-.capelo{
-    width:58px;
-    height:58px;
-}
-
-.emblema{
-    width:68px;
-    height:68px;
-}
 </style>
 
 </head>
@@ -344,76 +1029,106 @@ input[type="file"]{
 <body>
 
 
-<!-- =========================
-     CABEÇALHO
-========================= -->
+<div class="page">
 
-<header class="header">
 
-<div class="header-container">
+<!-- =================================================
+     TOPO
+================================================= -->
 
-<div class="event-symbols">
+<div class="top-decoration"></div>
 
-    <img
-        src="capelo.png"
-        class="symbol capelo"
-        alt="Capelo"
-    >
 
-    <img
-        src="emblema-curso.png"
-        class="symbol emblema"
-        alt="Emblema do curso"
-    >
+<!-- =================================================
+     IDENTIDADE DA FORMATURA
+================================================= -->
+
+<header class="header-content">
+
+
+<div class="capelo">
+
+    <div class="capelo-top"></div>
+
+    <div class="capelo-base"></div>
+
+    <div class="capelo-tassel"></div>
 
 </div>
+
 
 <p class="brand">
-   Tecnologia em Alimento
+    KB CERIMONIAL
 </p>
 
-<h1 class="event-name">
-    Formatura Sabrina 2026
+
+<h1 class="student-name">
+    Sabrina
 </h1>
 
-<p class="event-info">
-    📸 Álbum Colaborativo
-</p>
 
+<div class="event-title">
+    Formatura 2026
 </div>
+
+
+<div class="gold-line"></div>
+
 
 </header>
 
 
-<!-- =========================
-     CONTEÚDO
-========================= -->
+<!-- =================================================
+     MENSAGEM DA FORMANDA
+================================================= -->
 
-<main class="container">
-
-<div class="card">
+<section class="invitation">
 
 
-<!-- FORMULÁRIO -->
+<h2>
+    Compartilhe esse momento comigo!
+</h2>
 
-<div id="formulario">
+
+<p>
+
+Quero guardar para sempre cada sorriso,
+abraço e momento especial dessa conquista.
+
+<strong>
+Envie suas fotos e faça parte das minhas lembranças!
+</strong>
+
+💙
+
+</p>
 
 
-<div class="intro">
+</section>
 
-<div class="camera">
+
+<!-- =================================================
+     ÁLBUM
+================================================= -->
+
+<section class="album-card">
+
+
+<div class="album-heading">
+
+<div class="icon">
     📸
 </div>
 
-<h2>
-    Compartilhe suas fotos!
-</h2>
+
+<h3>
+    Álbum Colaborativo
+</h3>
+
 
 <p>
-    <strong>Quero viver e reviver esse momento através dos seus olhos. </strong>
-        Compartilhe comigo as fotos que você registrou da minha formatura. 
-            Cada registro será uma lembrança especial para mim!
-  
+    Compartilhe as fotos que você registrou
+    neste dia especial.
 </p>
 
 </div>
@@ -424,6 +1139,7 @@ input[type="file"]{
 <label for="nome">
     Seu nome
 </label>
+
 
 <input
     type="text"
@@ -445,13 +1161,16 @@ input[type="file"]{
     class="file-area"
 >
 
+
 <strong>
     📷 Selecionar fotos
 </strong>
 
+
 <span>
     Toque aqui para escolher uma ou mais fotos
 </span>
+
 
 </label>
 
@@ -482,7 +1201,7 @@ input[type="file"]{
 
 <button
     id="btnEnviar"
-    class="btn btn-blue"
+    class="btn btn-gold"
     onclick="enviarFotos()"
 >
 
@@ -499,107 +1218,128 @@ input[type="file"]{
 ></div>
 
 
-</div>
-
-
-<!-- =========================
-     TELA DE SUCESSO
-========================= -->
+<!-- =================================================
+     SUCESSO
+================================================= -->
 
 <div
     id="sucesso"
     class="success"
 >
 
-<div class="success-icon">
-    ✅
+
+<div class="success-symbol">
+    ✓
 </div>
+
 
 <h2>
     Fotos enviadas!
 </h2>
 
+
 <p>
-    Obrigado por compartilhar esses
-    momentos especiais da
-    <strong>Formatura Sabrina 2026</strong>.
+
+Obrigada por fazer parte
+deste momento tão especial.
+
+<br>
+
+Suas fotos agora fazem parte
+das minhas lembranças.
+
+🎓✨
+
 </p>
 
+
 <button
-    class="btn btn-blue"
+    class="btn btn-gold"
     onclick="novoEnvio()"
 >
-    📸 ENVIAR MAIS FOTOS
+
+📸 ENVIAR MAIS FOTOS
+
 </button>
 
-</div>
-
 
 </div>
 
-</main>
+
+</section>
 
 
-<!-- =========================
+<!-- =================================================
      RODAPÉ
-========================= -->
+================================================= -->
 
 <footer class="footer">
 
-@criado por <strong>Katiene Barbosa</strong> 2026
+@criado por
+<strong>
+    Katiene Barbosa
+</strong>
+2026
 
 </footer>
 
 
+</div>
+
+
 <script>
 
-/* =========================
+/* =====================================================
    GOOGLE APPS SCRIPT
-========================= */
+===================================================== */
 
 const SCRIPT_URL =
 'https://script.google.com/macros/s/AKfycbw-9ut9Wq3dAm60dP4KjFesbW_l78FciteJIIQ0YwCHMqH0Q5WZgaKikB2VIgdv2n-3/exec';
 
 
-/* =========================
+/* =====================================================
    EVENTO
-========================= */
+===================================================== */
 
 const EVENTO =
 'Formatura Sabrina 2026';
 
 
-/* =========================
+/* =====================================================
    LIMITE POR FOTO
-========================= */
+===================================================== */
 
 const MAX_SIZE =
 5 * 1024 * 1024;
 
 
-/* =========================
+/* =====================================================
    ELEMENTOS
-========================= */
+===================================================== */
 
 const inputFotos =
 document.getElementById('fotos');
 
+
 const preview =
 document.getElementById('preview');
+
 
 const count =
 document.getElementById('count');
 
+
 const status =
 document.getElementById('status');
+
 
 const btnEnviar =
 document.getElementById('btnEnviar');
 
 
-/* =========================
-   SELEÇÃO DE FOTOS
-========================= */
+/* =====================================================
+   SELEÇÃO
+===================================================== */
 
 inputFotos.addEventListener(
     'change',
@@ -607,9 +1347,9 @@ inputFotos.addEventListener(
 );
 
 
-/* =========================
+/* =====================================================
    PREVIEW
-========================= */
+===================================================== */
 
 function mostrarPreview(){
 
@@ -619,19 +1359,26 @@ function mostrarPreview(){
 
     status.innerText = '';
 
+
     const arquivos =
-        Array.from(inputFotos.files);
+        Array.from(
+            inputFotos.files
+        );
 
 
     if(!arquivos.length){
+
         return;
+
     }
 
 
     const validos =
         arquivos.filter(
             arquivo =>
-            arquivo.type.startsWith('image/')
+            arquivo.type.startsWith(
+                'image/'
+            )
         );
 
 
@@ -643,14 +1390,20 @@ function mostrarPreview(){
         arquivo => {
 
             const img =
-                document.createElement('img');
+                document.createElement(
+                    'img'
+                );
 
 
             img.src =
-                URL.createObjectURL(arquivo);
+                URL.createObjectURL(
+                    arquivo
+                );
 
 
-            preview.appendChild(img);
+            preview.appendChild(
+                img
+            );
 
         }
     );
@@ -658,19 +1411,23 @@ function mostrarPreview(){
 }
 
 
-/* =========================
+/* =====================================================
    ENVIAR FOTOS
-========================= */
+===================================================== */
 
 async function enviarFotos(){
 
     const nome =
-        document.getElementById('nome')
-        .value.trim();
+        document
+        .getElementById('nome')
+        .value
+        .trim();
 
 
     const arquivos =
-        Array.from(inputFotos.files);
+        Array.from(
+            inputFotos.files
+        );
 
 
     if(!nome){
@@ -712,9 +1469,6 @@ async function enviarFotos(){
 
     btnEnviar.disabled = true;
 
-    status.innerText =
-        'Enviando suas fotos...';
-
 
     try{
 
@@ -738,7 +1492,43 @@ async function enviarFotos(){
 
         document.getElementById(
             'formulario'
+        );
+
+
+        /* Esconde somente os elementos do formulário */
+
+        document.querySelector(
+            '.album-heading'
         ).style.display = 'none';
+
+
+        document.querySelector(
+            'label[for="nome"]'
+        ).style.display = 'none';
+
+
+        document.getElementById(
+            'nome'
+        ).style.display = 'none';
+
+
+        document.querySelector(
+            'label[for="fotos"]'
+        ).style.display = 'none';
+
+
+        document.getElementById(
+            'fotos'
+        ).style.display = 'none';
+
+
+        preview.style.display = 'none';
+
+        count.style.display = 'none';
+
+        btnEnviar.style.display = 'none';
+
+        status.style.display = 'none';
 
 
         document.getElementById(
@@ -747,13 +1537,14 @@ async function enviarFotos(){
 
 
     }
-
     catch(erro){
 
         console.error(erro);
 
+
         status.innerText =
             '❌ Não foi possível enviar as fotos. Tente novamente.';
+
 
         btnEnviar.disabled = false;
 
@@ -762,9 +1553,9 @@ async function enviarFotos(){
 }
 
 
-/* =========================
-   ENVIO INDIVIDUAL
-========================= */
+/* =====================================================
+   ENVIO DE CADA ARQUIVO
+===================================================== */
 
 function enviarArquivo(
     arquivo,
@@ -796,11 +1587,14 @@ function enviarArquivo(
 
                         arquivo:{
 
-                            nome:arquivo.name,
+                            nome:
+                                arquivo.name,
 
-                            tipo:arquivo.type,
+                            tipo:
+                                arquivo.type,
 
-                            base64:base64
+                            base64:
+                                base64
 
                         }
 
@@ -820,7 +1614,9 @@ function enviarArquivo(
                                 },
 
                                 body:
-                                JSON.stringify(dados)
+                                    JSON.stringify(
+                                        dados
+                                    )
 
                             }
                         );
@@ -846,10 +1642,11 @@ function enviarArquivo(
                     }
 
 
-                    resolve(resultado);
+                    resolve(
+                        resultado
+                    );
 
                 }
-
                 catch(erro){
 
                     reject(erro);
@@ -860,15 +1657,20 @@ function enviarArquivo(
 
 
             leitor.onerror =
-                () =>
-                reject(
-                    new Error(
-                        'Não foi possível ler a foto.'
-                    )
-                );
+                function(){
+
+                    reject(
+                        new Error(
+                            'Não foi possível ler a foto.'
+                        )
+                    );
+
+                };
 
 
-            leitor.readAsDataURL(arquivo);
+            leitor.readAsDataURL(
+                arquivo
+            );
 
         }
     );
@@ -876,40 +1678,18 @@ function enviarArquivo(
 }
 
 
-/* =========================
+/* =====================================================
    NOVO ENVIO
-========================= */
+===================================================== */
 
 function novoEnvio(){
 
-    document.getElementById(
-        'formulario'
-    ).style.display = 'block';
-
-
-    document.getElementById(
-        'sucesso'
-    ).style.display = 'none';
-
-
-    document.getElementById(
-        'nome'
-    ).value = '';
-
-
-    inputFotos.value = '';
-
-    preview.innerHTML = '';
-
-    count.innerText = '';
-
-    status.innerText = '';
-
-    btnEnviar.disabled = false;
+    location.reload();
 
 }
 
 </script>
+
 
 </body>
 
