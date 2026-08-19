@@ -8,7 +8,7 @@
 <meta name="viewport"
       content="width=device-width, initial-scale=1.0">
 
-<title>Formatura Sabrina 2026 | KB Cerimonial</title>
+<title>Formatura Sabrina 2026 </title>
 
 <link rel="icon"
       type="image/png"
@@ -26,9 +26,13 @@
 body{
     margin:0;
     font-family:'Open Sans',Arial,sans-serif;
-    background:#f7f7f7;
+    background:#f4f7ff;
     color:#333;
 }
+
+/* =========================
+   HEADER
+========================= */
 
 .header{
     background:#fff;
@@ -53,16 +57,16 @@ body{
 .brand{
     margin:0;
     font-size:.85rem;
-    color:#777;
-    font-weight:600;
-    letter-spacing:1px;
+    color:#555;
+    font-weight:700;
+    letter-spacing:1.5px;
 }
 
 .event-name{
     margin:5px 0;
     font-family:'Great Vibes',cursive;
     font-size:2.8rem;
-    color:#8BD24D;
+    color:#4169E1;
 }
 
 .event-info{
@@ -71,11 +75,21 @@ body{
     color:#666;
 }
 
+
+/* =========================
+   CONTAINER
+========================= */
+
 .container{
     max-width:600px;
     margin:30px auto;
     padding:0 20px;
 }
+
+
+/* =========================
+   CARD
+========================= */
 
 .card{
     background:#fff;
@@ -83,6 +97,11 @@ body{
     padding:28px 22px;
     box-shadow:0 5px 20px rgba(0,0,0,.08);
 }
+
+
+/* =========================
+   INTRO
+========================= */
 
 .intro{
     text-align:center;
@@ -96,6 +115,7 @@ body{
 .intro h2{
     margin:5px 0 10px;
     font-size:1.4rem;
+    color:#4169E1;
 }
 
 .intro p{
@@ -104,11 +124,17 @@ body{
     font-size:.95rem;
 }
 
+
+/* =========================
+   FORMULÁRIO
+========================= */
+
 label{
     display:block;
     margin-top:20px;
     margin-bottom:7px;
     font-weight:bold;
+    color:#444;
 }
 
 input[type="text"]{
@@ -121,22 +147,33 @@ input[type="text"]{
 }
 
 input[type="text"]:focus{
-    border-color:#8BD24D;
+    border-color:#4169E1;
 }
 
+
+/* =========================
+   ÁREA DE FOTO
+========================= */
+
 .file-area{
-    border:2px dashed #8BD24D;
+    border:2px dashed #4169E1;
     border-radius:14px;
     padding:25px 15px;
     text-align:center;
     margin-top:8px;
     cursor:pointer;
-    background:#fbfff8;
+    background:#f7f9ff;
+    transition:.2s;
+}
+
+.file-area:hover{
+    background:#eef2ff;
 }
 
 .file-area strong{
     display:block;
     margin-bottom:5px;
+    color:#4169E1;
 }
 
 .file-area span{
@@ -147,6 +184,11 @@ input[type="text"]:focus{
 input[type="file"]{
     display:none;
 }
+
+
+/* =========================
+   PREVIEW
+========================= */
 
 .preview{
     display:grid;
@@ -169,6 +211,11 @@ input[type="file"]{
     color:#666;
 }
 
+
+/* =========================
+   BOTÃO
+========================= */
+
 .btn{
     width:100%;
     border:none;
@@ -180,19 +227,25 @@ input[type="file"]{
     cursor:pointer;
 }
 
-.btn-green{
-    background:#8BD24D;
+.btn-blue{
+    background:#4169E1;
     color:#fff;
+    box-shadow:0 4px 10px rgba(65,105,225,.25);
 }
 
-.btn-green:hover{
-    background:#76b441;
+.btn-blue:hover{
+    background:#3157c7;
 }
 
-.btn-green:disabled{
+.btn-blue:disabled{
     background:#aaa;
     cursor:not-allowed;
 }
+
+
+/* =========================
+   STATUS
+========================= */
 
 .status{
     text-align:center;
@@ -200,6 +253,11 @@ input[type="file"]{
     font-weight:600;
     line-height:1.5;
 }
+
+
+/* =========================
+   SUCESSO
+========================= */
 
 .success{
     display:none;
@@ -211,7 +269,7 @@ input[type="file"]{
 }
 
 .success h2{
-    color:#8BD24D;
+    color:#4169E1;
 }
 
 .success p{
@@ -219,12 +277,26 @@ input[type="file"]{
     line-height:1.6;
 }
 
+
+/* =========================
+   FOOTER
+========================= */
+
 .footer{
     text-align:center;
-    padding:20px;
+    padding:25px 20px;
     font-size:.8rem;
-    color:#888;
+    color:#777;
 }
+
+.footer strong{
+    color:#4169E1;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
 
 @media(max-width:600px){
 
@@ -250,6 +322,10 @@ input[type="file"]{
 <body>
 
 
+<!-- =========================
+     CABEÇALHO
+========================= -->
+
 <header class="header">
 
 <div class="header-container">
@@ -261,7 +337,7 @@ input[type="file"]{
 >
 
 <p class="brand">
-    KB CERIMONIAL
+   Tecnologia em Alimento
 </p>
 
 <h1 class="event-name">
@@ -277,10 +353,16 @@ input[type="file"]{
 </header>
 
 
+<!-- =========================
+     CONTEÚDO
+========================= -->
+
 <main class="container">
 
 <div class="card">
 
+
+<!-- FORMULÁRIO -->
 
 <div id="formulario">
 
@@ -296,14 +378,16 @@ input[type="file"]{
 </h2>
 
 <p>
-    Registre os melhores momentos da
-    <strong>Formatura Sabrina 2026</strong>
-    e compartilhe suas fotos com a família
-    e os amigos.
+    <strong>Quero viver e reviver esse momento através dos seus olhos. </strong>
+        Compartilhe comigo as fotos que você registrou da minha formatura. 
+            Cada registro será uma lembrança especial para mim!
+  
 </p>
 
 </div>
 
+
+<!-- NOME -->
 
 <label for="nome">
     Seu nome
@@ -316,6 +400,8 @@ input[type="file"]{
     autocomplete="name"
 >
 
+
+<!-- FOTOS -->
 
 <label>
     Suas fotos
@@ -346,6 +432,8 @@ input[type="file"]{
 >
 
 
+<!-- PREVIEW -->
+
 <div
     id="preview"
     class="preview"
@@ -358,9 +446,11 @@ input[type="file"]{
 ></div>
 
 
+<!-- BOTÃO -->
+
 <button
     id="btnEnviar"
-    class="btn btn-green"
+    class="btn btn-blue"
     onclick="enviarFotos()"
 >
 
@@ -368,6 +458,8 @@ input[type="file"]{
 
 </button>
 
+
+<!-- STATUS -->
 
 <div
     id="status"
@@ -377,6 +469,10 @@ input[type="file"]{
 
 </div>
 
+
+<!-- =========================
+     TELA DE SUCESSO
+========================= -->
 
 <div
     id="sucesso"
@@ -398,7 +494,7 @@ input[type="file"]{
 </p>
 
 <button
-    class="btn btn-green"
+    class="btn btn-blue"
     onclick="novoEnvio()"
 >
     📸 ENVIAR MAIS FOTOS
@@ -412,46 +508,66 @@ input[type="file"]{
 </main>
 
 
+<!-- =========================
+     RODAPÉ
+========================= -->
+
 <footer class="footer">
 
-KB Cerimonial • Álbum Colaborativo
+@criado por <strong>Katiene Barbosa</strong> 2026
 
 </footer>
 
 
 <script>
 
+/* =========================
+   GOOGLE APPS SCRIPT
+========================= */
+
 const SCRIPT_URL =
 'https://script.google.com/macros/s/AKfycbw-9ut9Wq3dAm60dP4KjFesbW_l78FciteJIIQ0YwCHMqH0Q5WZgaKikB2VIgdv2n-3/exec';
 
+
+/* =========================
+   EVENTO
+========================= */
 
 const EVENTO =
 'Formatura Sabrina 2026';
 
 
+/* =========================
+   LIMITE POR FOTO
+========================= */
+
 const MAX_SIZE =
 5 * 1024 * 1024;
 
 
+/* =========================
+   ELEMENTOS
+========================= */
+
 const inputFotos =
 document.getElementById('fotos');
-
 
 const preview =
 document.getElementById('preview');
 
-
 const count =
 document.getElementById('count');
-
 
 const status =
 document.getElementById('status');
 
-
 const btnEnviar =
 document.getElementById('btnEnviar');
 
+
+/* =========================
+   SELEÇÃO DE FOTOS
+========================= */
 
 inputFotos.addEventListener(
     'change',
@@ -459,10 +575,16 @@ inputFotos.addEventListener(
 );
 
 
+/* =========================
+   PREVIEW
+========================= */
+
 function mostrarPreview(){
 
     preview.innerHTML = '';
+
     count.innerText = '';
+
     status.innerText = '';
 
     const arquivos =
@@ -503,6 +625,10 @@ function mostrarPreview(){
 
 }
 
+
+/* =========================
+   ENVIAR FOTOS
+========================= */
 
 async function enviarFotos(){
 
@@ -589,6 +715,7 @@ async function enviarFotos(){
 
 
     }
+
     catch(erro){
 
         console.error(erro);
@@ -602,6 +729,10 @@ async function enviarFotos(){
 
 }
 
+
+/* =========================
+   ENVIO INDIVIDUAL
+========================= */
 
 function enviarArquivo(
     arquivo,
@@ -686,6 +817,7 @@ function enviarArquivo(
                     resolve(resultado);
 
                 }
+
                 catch(erro){
 
                     reject(erro);
@@ -711,6 +843,10 @@ function enviarArquivo(
 
 }
 
+
+/* =========================
+   NOVO ENVIO
+========================= */
 
 function novoEnvio(){
 
